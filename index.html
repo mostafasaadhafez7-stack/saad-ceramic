@@ -40,7 +40,7 @@
 
       gtag("config", "AW-18282185132");
 
-      // 1. فانكشن تتبع الإحالة للاتصال الهاتفي
+      // 1. فانكشن تتبع الإحالة للاتصال الهاتفي (الكود القديم)
       function gtag_report_conversion(url) {
         var callback = function () {
           if (typeof url != "undefined") {
@@ -54,7 +54,7 @@
         return false;
       }
 
-      // 2. فانكشن تتبع الإحالة لنقرات الواتساب
+      // 2. فانكشن تتبع الإحالة الجديدة (الخاصة بالواتساب)
       function gtag_report_whatsapp(url) {
         var callback = function () {
           if (typeof url != "undefined") {
@@ -62,8 +62,7 @@
           }
         };
         gtag("event", "conversion", {
-          // ملاحظة: استبدل الرمز بعد الشرطة المائلة بالرمز الخاص بإحالة الواتساب من حسابك إن وجد
-          send_to: "AW-18282185132/-Rm6CJH5lMscEKyD0I1E", 
+          send_to: "AW-18282185132/bmbECJ6aqcscEKyD0I1E", // الكود الجديد اللي أنت أرسلته حالا
           event_callback: callback,
         });
         return false;
@@ -382,5 +381,6 @@
       <span id="closeLightbox">&times;</span>
       <img id="lightboxImg" />
     </div>
+
   </body>
 </html>
