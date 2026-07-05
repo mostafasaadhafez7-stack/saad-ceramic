@@ -25,6 +25,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
+    
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -39,6 +40,7 @@
 
       gtag("config", "AW-18282185132");
 
+      // 1. فانكشن تتبع الإحالة للاتصال الهاتفي
       function gtag_report_conversion(url) {
         var callback = function () {
           if (typeof url != "undefined") {
@@ -47,6 +49,21 @@
         };
         gtag("event", "conversion", {
           send_to: "AW-18282185132/-Rm6CJH5lMscEKyD0I1E",
+          event_callback: callback,
+        });
+        return false;
+      }
+
+      // 2. فانكشن تتبع الإحالة لنقرات الواتساب
+      function gtag_report_whatsapp(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          // ملاحظة: استبدل الرمز بعد الشرطة المائلة بالرمز الخاص بإحالة الواتساب من حسابك إن وجد
+          send_to: "AW-18282185132/-Rm6CJH5lMscEKyD0I1E", 
           event_callback: callback,
         });
         return false;
@@ -93,7 +110,11 @@
               <i class="fa-solid fa-phone"></i>
               اتصل الآن
             </a>
-            <a href="https://wa.me/966544895071" class="whatsapp">
+            <a 
+              href="https://wa.me/966544895071" 
+              onclick="return gtag_report_whatsapp('https://wa.me/966544895071');"
+              class="whatsapp"
+            >
               <i class="fa-brands fa-whatsapp"></i>
               واتساب
             </a>
@@ -106,7 +127,7 @@
         </div>
       </section>
 
-      <!-- shريط النصوص المتحرك -->
+      <!-- شريط النصوص المتحرك -->
       <div class="marquee">
         <div>
           ⭐ تركيب سيراميك ⭐ تركيب بورسلان ⭐ تركيب رخام ⭐ تبليط فلل ⭐ تبليط
@@ -170,45 +191,19 @@
         مدينة الرياض بأعلى جودة ودقة في التشطيب.
       </p>
       <div class="gallery">
-        <img
-          src="https://i.postimg.cc/DzsKHHg9/Whats-App-Image-2026-06-16-at-7-20-21-PM.jpg"
-        />
-        <img
-          src="https://i.postimg.cc/rwDTCKtR/Whats-App-Image-2026-06-16-at-7-20-21-PM-(1).jpg"
-        />
-        <img
-          src="https://i.postimg.cc/SK8p33dm/Whats-App-Image-2026-06-16-at-7-20-22-PM.jpg"
-        />
-        <img
-          src="https://i.postimg.cc/LsfMwwDM/Whats-App-Image-2026-06-16-at-7-20-22-PM-(1).jpg"
-        />
-        <img
-          src="https://i.postimg.cc/GpY1VVK0/Whats-App-Image-2026-06-16-at-7-20-22-PM-(2).jpg"
-        />
-        <img
-          src="https://i.postimg.cc/76kyk9tf/Whats-App-Image-2026-06-16-at-7-20-23-PM.jpg"
-        />
-        <img
-          src="https://i.postimg.cc/9fTjKKbm/Whats-App-Image-2026-06-16-at-7-20-23-PM-(1).jpg"
-        />
-        <img
-          src="https://i.postimg.cc/JnLWLxYn/Whats-App-Image-2026-06-16-at-7-20-23-PM-(3).jpg"
-        />
-        <img
-          src="https://i.postimg.cc/50SWNzDH/Whats-App-Image-2026-06-16-at-7-20-25-PM-(1).jpg"
-        />
-        <img
-          src="https://i.postimg.cc/B6BfQFRN/Whats-App-Image-2026-06-16-at-7-20-26-PM-(1).jpg"
-        />
-        <img
-          src="https://i.postimg.cc/Hx91sMF0/Whats-App-Image-2026-06-16-at-7-20-25-PM-(5).jpg"
-        />
-        <img
-          src="https://i.postimg.cc/4dQRNcj5/Whats-App-Image-2026-06-16-at-7-20-25-PM.jpg"
-        />
-        <img
-          src="https://i.postimg.cc/85mgPvxJ/Whats-App-Image-2026-06-16-at-7-20-25-PM-(3).jpg"
-        />
+        <img src="https://i.postimg.cc/DzsKHHg9/Whats-App-Image-2026-06-16-at-7-20-21-PM.jpg" />
+        <img src="https://i.postimg.cc/rwDTCKtR/Whats-App-Image-2026-06-16-at-7-20-21-PM-(1).jpg" />
+        <img src="https://i.postimg.cc/SK8p33dm/Whats-App-Image-2026-06-16-at-7-20-22-PM.jpg" />
+        <img src="https://i.postimg.cc/LsfMwwDM/Whats-App-Image-2026-06-16-at-7-20-22-PM-(1).jpg" />
+        <img src="https://i.postimg.cc/GpY1VVK0/Whats-App-Image-2026-06-16-at-7-20-22-PM-(2).jpg" />
+        <img src="https://i.postimg.cc/76kyk9tf/Whats-App-Image-2026-06-16-at-7-20-23-PM.jpg" />
+        <img src="https://i.postimg.cc/9fTjKKbm/Whats-App-Image-2026-06-16-at-7-20-23-PM-(1).jpg" />
+        <img src="https://i.postimg.cc/JnLWLxYn/Whats-App-Image-2026-06-16-at-7-20-23-PM-(3).jpg" />
+        <img src="https://i.postimg.cc/50SWNzDH/Whats-App-Image-2026-06-16-at-7-20-25-PM-(1).jpg" />
+        <img src="https://i.postimg.cc/B6BfQFRN/Whats-App-Image-2026-06-16-at-7-20-26-PM-(1).jpg" />
+        <img src="https://i.postimg.cc/Hx91sMF0/Whats-App-Image-2026-06-16-at-7-20-25-PM-(5).jpg" />
+        <img src="https://i.postimg.cc/4dQRNcj5/Whats-App-Image-2026-06-16-at-7-20-25-PM.jpg" />
+        <img src="https://i.postimg.cc/85mgPvxJ/Whats-App-Image-2026-06-16-at-7-20-25-PM-(3).jpg" />
       </div>
     </section>
 
@@ -254,7 +249,12 @@
             class="call"
             >📞 اتصل الآن</a
           >
-          <a href="https://wa.me/966544895071" class="whatsapp">💬 واتساب</a>
+          <a 
+            href="https://wa.me/966544895071" 
+            onclick="return gtag_report_whatsapp('https://wa.me/966544895071');"
+            class="whatsapp"
+            >💬 واتساب</a
+          >
         </div>
       </div>
     </section>
@@ -329,7 +329,12 @@
         class="big-btn"
         >📞 0544895071</a
       >
-      <a href="https://wa.me/966544895071" class="big-btn2">💬 واتساب</a>
+      <a 
+        href="https://wa.me/966544895071" 
+        onclick="return gtag_report_whatsapp('https://wa.me/966544895071');"
+        class="big-btn2"
+        >💬 واتساب</a
+      >
     </section>
 
     <!-- الأزرار العائمة الأساسية (بأيقونات FontAwesome) -->
@@ -340,7 +345,11 @@
     >
       <i class="fa-solid fa-phone"></i>
     </a>
-    <a href="https://wa.me/966544895071" class="float-whatsapp">
+    <a 
+      href="https://wa.me/966544895071" 
+      onclick="return gtag_report_whatsapp('https://wa.me/966544895071');"
+      class="float-whatsapp"
+    >
       <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -359,7 +368,11 @@
           onclick="return gtag_report_conversion('tel:+966544895071');"
           >📞 0544895071</a
         >
-        <a href="https://wa.me/966544895071">💬 واتساب</a>
+        <a 
+          href="https://wa.me/966544895071" 
+          onclick="return gtag_report_whatsapp('https://wa.me/966544895071');"
+          >💬 واتساب</a
+        >
       </div>
       <p>© 2026 جميع الحقوق محفوظة</p>
     </footer>
@@ -370,5 +383,5 @@
       <img id="lightboxImg" />
     </div>
 
-</body>
+  </body>
 </html>
